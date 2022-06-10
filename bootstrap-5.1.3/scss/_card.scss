@@ -2,6 +2,18 @@
 // Base styles
 //
 
+.card-text-title{
+  color: rgb(212, 45, 156);
+  //cambio de color del titulo//
+}
+.bg-color-carta{
+  background-color: black;
+  //cambio de fondo//
+}
+.color-text-card{
+  color: $card-bg;
+  //ocupando extension de color para el color del texto//
+}
 .card {
   position: relative;
   display: flex;
@@ -9,7 +21,8 @@
   min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
   height: $card-height;
   word-wrap: break-word;
-  background-color: $card-bg;
+  @extend .bg-color-carta;
+  //background-color: $card-bg;//
   background-clip: border-box;
   border: $card-border-width solid $card-border-color;
   @include border-radius($card-border-radius);
@@ -53,8 +66,13 @@
 
 .card-title {
   margin-bottom: $card-title-spacer-y;
+  @extend .card-text-title;
 }
-
+//extension de color al titulo//
+.card-text{
+  @extend .color-text-card;
+}
+//cambio de color blanco al card text//
 .card-subtitle {
   margin-top: -$card-title-spacer-y * .5;
   margin-bottom: 0;
